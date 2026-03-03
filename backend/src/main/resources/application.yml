@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: project-tracking
+
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: project_tracker
+    password: your_password
+    driver-class-name: oracle.jdbc.OracleDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+        format_sql: true
+
+  security:
+    jwt:
+      secret: your-secret-key-change-this-in-production-at-least-256-bits
+      expiration: 86400000 # 24 hours
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.projecttracking: DEBUG
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
