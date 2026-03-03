@@ -3,9 +3,9 @@ spring:
     name: project-tracking
 
   datasource:
-    url: jdbc:oracle:thin:@localhost:1521:XE
-    username: project_tracker
-    password: your_password
+    url: jdbc:oracle:thin:@${DB_HOST}:${DB_PORT}:${DB_SID}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: oracle.jdbc.OracleDriver
 
   jpa:
@@ -19,11 +19,11 @@ spring:
 
   security:
     jwt:
-      secret: your-secret-key-change-this-in-production-at-least-256-bits
-      expiration: 86400000 # 24 hours
+      secret: ${JWT_SECRET}
+      expiration: ${JWT_EXPIRATION:86400000}
 
 server:
-  port: 8080
+  port: ${APP_PORT:8080}
 
 logging:
   level:
