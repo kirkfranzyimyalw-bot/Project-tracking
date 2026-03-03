@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "projects")
+@Table(name = "MES.PMP_PROJECTS", schema = "MES")
 @Data
 public class Project {
 

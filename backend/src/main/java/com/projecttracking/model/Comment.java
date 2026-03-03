@@ -5,7 +5,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "comments")
+@Table(name = "MES.PMP_COMMENTS", schema = "MES")
 @Data
 public class Comment {
 

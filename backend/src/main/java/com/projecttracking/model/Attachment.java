@@ -5,7 +5,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "attachments")
+@Table(name = "MES.PMP_ATTACHMENTS", schema = "MES")
 @Data
 public class Attachment {
 
